@@ -3,7 +3,6 @@
 }
 .header {
   box-sizing: border-box;
-  width: 1450px;
   height: 100px;
   background-color: aquamarine;
   text-align: center;
@@ -13,10 +12,13 @@
   font-size: 40px;
 }
 #main {
+  box-sizing: border-box;
   display: flex;
 }
 #leftMain {
   border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
   width: 750px;
   height: 600px;
   display: flex;
@@ -25,19 +27,19 @@
   align-items: center;
 }
 #rightMain {
+  box-sizing: border-box;
   width: 750px;
   height: 600px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
 }
-
 #todoListForm {
   width: 300px;
   height: 20px;
   margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
+}
+input {
+  border: 3px solid aquamarine;
 }
 button {
   border: none;
@@ -54,21 +56,46 @@ button {
 }
 #errorMessage {
   box-sizing: border-box;
-  display: none;
   width: 300px;
   height: 100px;
   border: 1px solid black;
   color: yellow;
   position: absolute;
-  top: 250px;
+  top: 300px;
   left: 600px;
   background-color: blue;
   text-align: center;
   padding-top: 40px;
 }
 #weekGoal {
+  height: 450px;
   border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 #timer {
+  margin: 10px;
   border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+#time {
+  /* border: 1px solid black; */
+  height: 100px;
+  font-size: 100px;
+}
+
+#timeRank {
+  padding: 6px;
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  position: absolute;
+  top: 300px;
+  left: 600px;
+}
+
+.displayChange {
+  display: none;
 }
