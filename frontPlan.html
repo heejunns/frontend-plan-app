@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="frontPlan.css" />
   </head>
   <body>
-    <div class="header"><h1 id="head-h1">FrontEnd 개발 공부</h1></div>
+    <div class="header">
+      <h1 id="head-h1">FrontEnd 개발 공부</h1>
+      <div><span id="quote"></span></div>
+    </div>
     <div id="main">
       <div id="leftMain">
         <form id="todoListForm">
@@ -24,18 +27,48 @@
         <div>
           <ul id="todolist"></ul>
         </div>
-        <div id="errorMessage">숫자는 입력 할 수 없습니다.</div>
+        <!-- <div id="errorMessageTodo">숫자는 입력 할 수 없습니다.</div> -->
       </div>
       <div id="rightMain">
-        <div id="weekGoal"><h3>this week's goal</h3></div>
+        <div id="weekGoal">
+          <h3>this week's goal</h3>
+          <form id="weekListForm">
+            <label for="weekInput">요번주 목표 : </label>
+            <input
+              id="weekInput"
+              type="text"
+              placeholder="요번주 목표를 적어주세요."
+              required
+            />
+            <button>저장하기</button>
+          </form>
+          <div>
+            <ul id="weeklist"></ul>
+          </div>
+        </div>
         <div id="timer">
           오늘 공부 시간:
-          <button>Start</button>
-          <button>Stop</button>
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <button id="reset">Reset</button>
+          <button id="save">Save</button>
+          <button id="currentTimeRank">최근 공부기록 보기</button>
           <div id="time">00:00:00</div>
         </div>
       </div>
+      <div id="errorMessage" class="displayChange">
+        숫자는 입력 할 수 없습니다. 😾
+      </div>
+      <div id="timeRank" class="displayChange">
+        <h4>최근 공부시간 기록:</h4>
+        <span id="oneDayAgo">1일 전 : </span><br />
+        <span id="twoDayAgo"> 2일 전: </span><br />
+        <span id="threeDayAgo"> 3일 전 :</span>
+      </div>
     </div>
     <script src="frontPlan-todo.js"></script>
+    <script src="frontPlan-weekGoal.js"></script>
+    <script src="frontPlan-timer.js"></script>
+    <script src="frontPlan-quote.js"></script>
   </body>
 </html>
