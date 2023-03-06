@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+}
+.header {
+  box-sizing: border-box;
+  width: 1450px;
+  height: 100px;
+  background-color: aquamarine;
+  text-align: center;
+  padding-top: 20px;
+}
+#head-h1 {
+  font-size: 40px;
+}
+#main {
+  display: flex;
+}
+#leftMain {
+  border: 1px solid black;
+  width: 750px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#rightMain {
+  width: 750px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+#todoListForm {
+  width: 300px;
+  height: 20px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+button {
+  border: none;
+  background-color: aquamarine;
+  border-radius: 3px;
+}
+#todolist {
+  list-style: none;
+  width: 310px;
+  margin-top: 10px;
+}
+.list-item {
+  padding: 4px;
+}
+#errorMessage {
+  box-sizing: border-box;
+  display: none;
+  width: 300px;
+  height: 100px;
+  border: 1px solid black;
+  color: yellow;
+  position: absolute;
+  top: 250px;
+  left: 600px;
+  background-color: blue;
+  text-align: center;
+  padding-top: 40px;
+}
+#weekGoal {
+  border: 1px solid black;
+}
+#timer {
+  border: 1px solid black;
+}
