@@ -1,3 +1,4 @@
+// 요번주 목표 입력하는 기능 코드 js
 const $weeklistform = document.querySelector('#weekListForm');
 const $weekInput = document.querySelector('#weekInput');
 const $weeklist = document.querySelector('#weeklist');
