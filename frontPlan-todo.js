@@ -1,3 +1,4 @@
+// 오늘 할일 입력해서 기록하는 todolist 기능 js 코드
 const $todolistform = document.querySelector('#todoListForm');
 const $todoInput = document.querySelector('#todoInput');
 const $todolist = document.querySelector('#todolist');
