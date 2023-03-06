@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개발공부</title>
+    <link rel="stylesheet" href="frontPlan.css" />
+  </head>
+  <body>
+    <div class="header"><h1 id="head-h1">FrontEnd 개발 공부</h1></div>
+    <div id="main">
+      <div id="leftMain">
+        <form id="todoListForm">
+          <label for="todoInput">오늘 할일: </label>
+          <input
+            id="todoInput"
+            type="text"
+            placeholder="오늘 할 일을 적어주세요."
+            required
+          />
+          <button>저장하기</button>
+        </form>
+        <div>
+          <ul id="todolist"></ul>
+        </div>
+        <div id="errorMessage">숫자는 입력 할 수 없습니다.</div>
+      </div>
+      <div id="rightMain">
+        <div id="weekGoal"><h3>this week's goal</h3></div>
+        <div id="timer">
+          오늘 공부 시간:
+          <button>Start</button>
+          <button>Stop</button>
+          <div id="time">00:00:00</div>
+        </div>
+      </div>
+    </div>
+    <script src="frontPlan-todo.js"></script>
+  </body>
+</html>
