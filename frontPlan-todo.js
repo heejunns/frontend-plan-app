@@ -2,28 +2,28 @@ const $todolistform = document.querySelector('#todoListForm');
 const $todoInput = document.querySelector('#todoInput');
 const $todolist = document.querySelector('#todolist');
 const $errorMessage = document.querySelector('#errorMessage');
-let localStorageRemember = [];
+let localStorageRememberTodo = [];
 
-function clickDeleteButton(event) {
+function clickDeleteButtonTodo(event) {
   event.preventDefault();
   console.log(event.target.parentElement);
   event.target.parentElement.remove();
-  localStorageRemember = localStorageRemember.filter(
+  localStorageRememberTodo = localStorageRememberTodo.filter(
     (element) => element.id !== parseInt(event.target.parentElement.id)
   );
-  saveLocal(localStorageRemember);
-  console.log(localStorageRemember);
+  saveLocalTodo(localStorageRememberTodo);
+  console.log(localStorageRememberTodo);
 }
-function saveLocal(localStorageRemember) {
-  localStorage.setItem('userTodo', JSON.stringify(localStorageRemember));
+function saveLocalTodo(localStorageRememberTodo) {
+  localStorage.setItem('userTodo', JSON.stringify(localStorageRememberTodo));
 }
-function drawList(input) {
+function drawListTodo(input) {
   console.log(input.text);
   const list = document.createElement('li');
   const listSpan = document.createElement('span');
   const span = document.createElement('span');
   const deleteButton = document.createElement('button');
-  deleteButton.addEventListener('click', clickDeleteButton);
+  deleteButton.addEventListener('click', clickDeleteButtonTodo);
   listSpan.textContent = '🧑‍💻';
   deleteButton.textContent = '🗑️';
   list.id = input.id;
@@ -31,33 +31,33 @@ function drawList(input) {
   span.textContent = input.text;
   list.append(listSpan, span, deleteButton);
   $todolist.append(list);
-  console.log(localStorageRemember);
 }
-function clickSubmitButton(event) {
+function clickSubmitButtonTodo(event) {
   event.preventDefault();
   if (Object.is(parseInt($todoInput.value), NaN)) {
     const input = {
       id: Date.now(),
       text: $todoInput.value,
     };
-    drawList(input);
-    localStorageRemember.push(input);
-    saveLocal(localStorageRemember);
+    drawListTodo(input);
+    localStorageRememberTodo.push(input);
+    saveLocalTodo(localStorageRememberTodo);
     $todoInput.value = '';
   } else {
     $todoInput.value = '';
-    $errorMessage.style.display = 'block';
+    $errorMessage.classList.toggle('displayChange');
     setTimeout(() => {
-      $errorMessage.style.display = 'none';
+      $errorMessage.classList.toggle('displayChange');
     }, 2000);
   }
 }
-$todolistform.addEventListener('submit', clickSubmitButton);
 
-const localStoragUserGet = JSON.parse(localStorage.getItem('userTodo'));
-if (localStoragUserGet) {
-  localStorageRemember = localStoragUserGet;
-  if (localStoragUserGet.length > 0) {
-    localStoragUserGet.forEach(drawList);
+$todolistform.addEventListener('submit', clickSubmitButtonTodo);
+
+const localStoragUserGetTodo = JSON.parse(localStorage.getItem('userTodo'));
+if (localStoragUserGetTodo) {
+  localStorageRememberTodo = localStoragUserGetTodo;
+  if (localStoragUserGetTodo.length > 0) {
+    localStoragUserGetTodo.forEach(drawListTodo);
   }
 }
